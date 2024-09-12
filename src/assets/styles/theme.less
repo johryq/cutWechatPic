@@ -1,0 +1,120 @@
+// 亮色主题变量
+@light-bg: #ffffff;
+@light-text: #333333;
+@light-title-bg: #eeeeee;
+@light-commit-bg: #f7f7f7;
+@light-commit-line: #e1e1e1;
+@light-comit-time: #bebfbf;
+@light-comit-name: #5b6b92;
+@light-footer-bottom: #000000;
+
+// 暗色主题变量
+@dark-bg: #333333;
+@dark-text: #ffffff;
+@dark-title-bg: #121212;
+@dark-commit-bg: #202020;
+@dark-time: #7a7a7a;
+@dark-line: #272727;
+@dark-footer-bottom: #feffff;
+@dark-footer-input-bg: #292929;
+@dark-dropdown-option-bg: #2c2c2c;
+
+.theme-mixin() {
+  // 定义颜色属性
+  --bg-color: @light-bg;
+  --text-color: @light-text;
+  --title-bg: @light-title-bg;
+  --light-cbg: @light-commit-bg;
+  --light-cline: @light-commit-line;
+  --light-ctime: @light-comit-time;
+  --light-cname: @light-comit-name;
+  --light-fbottom: @light-footer-bottom;
+  img.svg-icon {
+    filter: invert(7%) sepia(8%) saturate(23%) hue-rotate(314deg) brightness(97%) contrast(93%);
+  }
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+  }
+  .options-list {
+    div {
+      background-color: var(--bg-color);
+    }
+  }
+  .ios-header,
+  .footer {
+    background-color: var(--title-bg);
+    .footer-bottom {
+      background-color: @light-footer-bottom;
+    }
+    // color: var(--bg-color);
+  }
+  .time {
+    color: var(--light-ctime);
+  }
+  .commint-container {
+    background-color: var(--light-cbg);
+    .cm-like {
+      border-bottom-color: var(--light-cline);
+    }
+
+    .name {
+      color: var(--light-cname);
+    }
+  }
+  &[data-theme='dark'] {
+    --bg-color: @dark-bg;
+    --text-color: @dark-text;
+    --dark-cbg: @dark-commit-bg;
+    --dark-tbg: @dark-title-bg;
+    --dark-time: @dark-time;
+    --dark-line: @dark-line;
+    --dark-fbinput: @dark-footer-input-bg;
+    --dark-ddobg: @dark-dropdown-option-bg;
+    img.svg-icon {
+      filter: invert(95%) sepia(5%) saturate(31%) hue-rotate(9deg) brightness(89%) contrast(88%);
+    }
+    .options-dropdown {
+      background-color: var(--dark-ddobg);
+      .options-list {
+        div {
+          background-color: var(--bg-color);
+        }
+      }
+    }
+    .ios-header,
+    .footer {
+      background-color: var(--dark-tbg);
+      // color: var(--bg-color);
+      .footer-bottom {
+        background-color: @dark-footer-bottom;
+      }
+      input {
+        background-color: var(--dark-fbinput);
+      }
+    }
+    .time {
+      color: var(--dark-time);
+    }
+    .cbt-right {
+      background-color: var(--dark-cbg);
+    }
+    .commint-container {
+      background-color: var(--dark-cbg);
+      .cm-like {
+        border-bottom-color: var(--dark-line);
+      }
+
+      // .name {
+      //   color: var(--light-cname);
+      // }
+    }
+  }
+}
+
+:root {
+  .theme-mixin();
+}
+
+// 使用示例

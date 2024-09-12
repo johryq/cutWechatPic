@@ -1,0 +1,36 @@
+@import 'normalize.css';
+@import './fonts.css';
+
+#app {
+  min-width: 375px;
+  min-height: 100vh;
+  max-width: 420px;
+  border: 1px solid #000;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.avatar {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.12rem;
+  background-color: cadetblue;
+}
+
+.name {
+  color: #5b6b92;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

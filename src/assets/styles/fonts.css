@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'SF-Pro-Display-Thin';
+  font-weight: 500;
+  src: url('/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+  /* font-weight: normal; */
+  font-style: normal;
+}
